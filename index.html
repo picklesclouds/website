@@ -1,516 +1,915 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PicklesCloud - Cloud Native IT Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- Favicon -->
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png" />
     <!-- Open Graph -->
-    <meta property="og:title" content="PicklesCloud - Cloud Native IT Consulting">
-    <meta property="og:description" content="Accelerate your journey to cloud native with expert IT consulting.">
-    <meta property="og:image" content="og-image.jpg">
+    <meta
+      property="og:title"
+      content="PicklesCloud - Cloud Native IT Consulting"
+    />
+    <meta
+      property="og:description"
+      content="Accelerate your journey to cloud native with expert IT consulting."
+    />
+    <meta property="og:image" content="og-image.jpg" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .heading { font-family: 'Space Grotesk', sans-serif; }
-        .hero-bg {
-            background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap");
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      .heading {
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .hero-bg {
+        background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+      }
     </style>
-</head>
-<body class="bg-zinc-950 text-white">
+  </head>
+  <body class="bg-zinc-950 text-white">
     <!-- Navbar -->
     <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center space-x-3 hover:opacity-90 transition">
-                <img src="assets/logo.png" alt="PicklesCloud" class="w-9 h-9 md:w-10 md:h-10 object-contain">
-                <div>
-                    <span class="heading text-2xl md:text-3xl font-semibold tracking-tight">picklescloud</span>
-                </div>
-            </a>
+      <div
+        class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="flex items-center space-x-3 hover:opacity-90 transition"
+        >
+          <img
+            src="assets/logo.png"
+            alt="PicklesCloud"
+            class="w-9 h-9 md:w-10 md:h-10 object-contain"
+          />
+          <div>
+            <span
+              class="heading text-2xl md:text-3xl font-semibold tracking-tight"
+              >picklescloud</span
+            >
+          </div>
+        </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#services" class="hover:text-emerald-400 transition-colors">Services</a>
-                <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
-                <a href="#why" class="hover:text-emerald-400 transition-colors">Why Us</a>
-                <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
-            </div>
-
-            <!-- Desktop CTA -->
-            <a href="#contact" class="hidden md:block bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-2xl text-sm font-semibold transition-colors">Get a Consultation</a>
-
-            <!-- Mobile Hamburger -->
-            <button id="mobile-menu-button" class="md:hidden text-3xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#services" class="hover:text-emerald-400 transition-colors"
+            >Services</a
+          >
+          <a href="#about" class="hover:text-emerald-400 transition-colors"
+            >About</a
+          >
+          <a href="#why" class="hover:text-emerald-400 transition-colors"
+            >Why Us</a
+          >
+          <a href="#contact" class="hover:text-emerald-400 transition-colors"
+            >Contact</a
+          >
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-zinc-800 py-6 px-6">
-            <div class="flex flex-col space-y-6 text-lg">
-                <a href="#services" onclick="toggleMobileMenu()" class="hover:text-emerald-400 transition-colors">Services</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-emerald-400 transition-colors">About</a>
-                <a href="#why" onclick="toggleMobileMenu()" class="hover:text-emerald-400 transition-colors">Why Us</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-emerald-400 transition-colors">Contact</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="mt-4 bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-2xl text-center font-semibold">Get a Consultation</a>
-            </div>
+        <!-- Desktop CTA -->
+        <a
+          href="#contact"
+          class="hidden md:block bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-2xl text-sm font-semibold transition-colors"
+          >Get a Consultation</a
+        >
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-3xl focus:outline-none"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-zinc-900 border-t border-zinc-800 py-6 px-6"
+      >
+        <div class="flex flex-col space-y-6 text-lg">
+          <a
+            href="#services"
+            onclick="toggleMobileMenu()"
+            class="hover:text-emerald-400 transition-colors"
+            >Services</a
+          >
+          <a
+            href="#about"
+            onclick="toggleMobileMenu()"
+            class="hover:text-emerald-400 transition-colors"
+            >About</a
+          >
+          <a
+            href="#why"
+            onclick="toggleMobileMenu()"
+            class="hover:text-emerald-400 transition-colors"
+            >Why Us</a
+          >
+          <a
+            href="#contact"
+            onclick="toggleMobileMenu()"
+            class="hover:text-emerald-400 transition-colors"
+            >Contact</a
+          >
+          <a
+            href="#contact"
+            onclick="toggleMobileMenu()"
+            class="mt-4 bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-2xl text-center font-semibold"
+            >Get a Consultation</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero-bg pt-24 pb-20">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <div class="inline-flex items-center bg-white/10 backdrop-blur-md px-4 py-2 rounded-3xl text-sm">
-                    <span class="bg-emerald-400 text-emerald-950 px-2.5 py-0.5 rounded-2xl font-semibold mr-2">NEW</span>
-                    Cloud Native Transformation Experts
-                </div>
-                <h1 class="heading text-6xl md:text-7xl font-semibold leading-none tracking-tighter">
-                    Accelerate your journey to<br> 
-                    <span class="text-emerald-400">cloud native</span>
-                </h1>
-                <p class="text-xl text-zinc-300 max-w-lg">
-                    We help organizations migrate to modern cloud architectures, optimize open source usage, and build scalable, resilient systems.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="bg-white text-zinc-900 hover:bg-zinc-100 px-8 py-4 rounded-3xl font-semibold text-lg inline-flex items-center gap-3 group">
-                        Start Your Transformation
-                        <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition"></i>
-                    </a>
-                    <a href="#services" class="border border-white/30 hover:bg-white/10 px-8 py-4 rounded-3xl font-medium text-lg inline-flex items-center">See Services</a>
-                </div>
-                <div class="flex items-center gap-8 text-sm pt-4">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-check text-emerald-400"></i>
-                        <span>AWS | Azure | GCP</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-check text-emerald-400"></i>
-                        <span>Kubernetes Certified</span>
-                    </div>
-                </div>
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center bg-white/10 backdrop-blur-md px-4 py-2 rounded-3xl text-sm"
+          >
+            <span
+              class="bg-emerald-400 text-emerald-950 px-2.5 py-0.5 rounded-2xl font-semibold mr-2"
+              >NEW</span
+            >
+            Cloud Native Transformation Experts
+          </div>
+          <h1
+            class="heading text-6xl md:text-7xl font-semibold leading-none tracking-tighter"
+          >
+            Accelerate your journey to<br />
+            <span class="text-emerald-400">cloud native</span>
+          </h1>
+          <p class="text-xl text-zinc-300 max-w-lg">
+            We help organizations migrate to modern cloud architectures,
+            optimize open source usage, and build scalable, resilient systems.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="bg-white text-zinc-900 hover:bg-zinc-100 px-8 py-4 rounded-3xl font-semibold text-lg inline-flex items-center gap-3 group"
+            >
+              Start Your Transformation
+              <i
+                class="fa-solid fa-arrow-right group-active:translate-x-1 transition"
+              ></i>
+            </a>
+            <a
+              href="#services"
+              class="border border-white/30 hover:bg-white/10 px-8 py-4 rounded-3xl font-medium text-lg inline-flex items-center"
+              >See Services</a
+            >
+          </div>
+          <div class="flex items-center gap-8 text-sm pt-4">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-check text-emerald-400"></i>
+              <span>AWS | Azure | GCP</span>
             </div>
-
-            <!-- Carousel -->
-            <div class="relative">
-                <div id="hero-carousel" class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 h-[420px] md:h-[520px]">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-700" style="opacity: 1;">
-                        <img src="https://picsum.photos/id/133/800/600" alt="Modern Datacenter" class="w-full h-full object-cover">
-                        <!-- Badge on Slide 1 -->
-                        <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md">
-                            <div class="flex items-center gap-4">
-                                <div class="text-4xl">🚀</div>
-                                <div>
-                                    <div class="text-emerald-400 font-semibold">40% faster deployments</div>
-                                    <div class="text-zinc-400 text-sm">Average client result</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-700" style="opacity: 0;">
-                        <img src="og-image.jpg" alt="PicklesCloud Social" class="w-full h-full object-cover">
-                        <!-- Badge on Slide 2 -->
-                        <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md">
-                            <div class="flex items-center gap-4">
-                                <div class="text-4xl">🚀</div>
-                                <div>
-                                    <div class="text-emerald-400 font-semibold">40% faster deployments</div>
-                                    <div class="text-zinc-400 text-sm">Average client result</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Slides -->
-                    <!-- Slide 3: Kubernetes focused -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-700" style="opacity: 0;">
-                        <img src="https://picsum.photos/id/201/800/600" alt="Kubernetes Infrastructure" class="w-full h-full object-cover">
-                        <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md">
-                            <div class="flex items-center gap-4">
-                                <div class="text-4xl">🚀</div>
-                                <div>
-                                    <div class="text-emerald-400 font-semibold">40% faster deployments</div>
-                                    <div class="text-zinc-400 text-sm">Average client result</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4: Team / Consulting -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-700" style="opacity: 0;">
-                        <img src="https://picsum.photos/id/160/800/600" alt="Cloud Operations Center" class="w-full h-full object-cover">
-                        <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md">
-                            <div class="flex items-center gap-4">
-                                <div class="text-4xl">🚀</div>
-                                <div>
-                                    <div class="text-emerald-400 font-semibold">40% faster deployments</div>
-                                    <div class="text-zinc-400 text-sm">Average client result</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carousel Controls -->
-                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition z-10">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition z-10">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-                <!-- Dots -->
-                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                    <button onclick="goToSlide(0)" class="carousel-dot w-3 h-3 bg-white rounded-full transition"></button>
-                    <button onclick="goToSlide(1)" class="carousel-dot w-3 h-3 bg-white/50 hover:bg-white rounded-full transition"></button>
-                    <button onclick="goToSlide(2)" class="carousel-dot w-3 h-3 bg-white/50 hover:bg-white rounded-full transition"></button>
-                    <button onclick="goToSlide(3)" class="carousel-dot w-3 h-3 bg-white/50 hover:bg-white rounded-full transition"></button>
-                </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-check text-emerald-400"></i>
+              <span>Kubernetes Certified</span>
             </div>
+          </div>
         </div>
+
+        <!-- Carousel -->
+        <div class="relative">
+          <div
+            id="hero-carousel"
+            class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 h-[420px] md:h-[520px]"
+          >
+            <!-- Slide 1 -->
+            <div
+              class="carousel-slide absolute inset-0 transition-opacity duration-700"
+              style="opacity: 1"
+            >
+              <img
+                src="https://picsum.photos/id/133/800/600"
+                alt="Modern Datacenter"
+                class="w-full h-full object-cover"
+              />
+              <!-- Badge on Slide 1 -->
+              <div
+                class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="text-4xl">🚀</div>
+                  <div>
+                    <div class="text-emerald-400 font-semibold">
+                      40% faster deployments
+                    </div>
+                    <div class="text-zinc-400 text-sm">
+                      Average client result
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div
+              class="carousel-slide absolute inset-0 transition-opacity duration-700"
+              style="opacity: 0"
+            >
+              <img
+                src="og-image.jpg"
+                alt="PicklesCloud Social"
+                class="w-full h-full object-cover"
+              />
+              <!-- Badge on Slide 2 -->
+              <div
+                class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="text-4xl">🚀</div>
+                  <div>
+                    <div class="text-emerald-400 font-semibold">
+                      40% faster deployments
+                    </div>
+                    <div class="text-zinc-400 text-sm">
+                      Average client result
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Slides -->
+            <!-- Slide 3: Kubernetes focused -->
+            <div
+              class="carousel-slide absolute inset-0 transition-opacity duration-700"
+              style="opacity: 0"
+            >
+              <img
+                src="https://picsum.photos/id/201/800/600"
+                alt="Kubernetes Infrastructure"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="text-4xl">🚀</div>
+                  <div>
+                    <div class="text-emerald-400 font-semibold">
+                      40% faster deployments
+                    </div>
+                    <div class="text-zinc-400 text-sm">
+                      Average client result
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Team / Consulting -->
+            <div
+              class="carousel-slide absolute inset-0 transition-opacity duration-700"
+              style="opacity: 0"
+            >
+              <img
+                src="https://picsum.photos/id/160/800/600"
+                alt="Cloud Operations Center"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute -bottom-6 -left-6 bg-zinc-900 border border-emerald-500/30 p-6 rounded-3xl backdrop-blur-md"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="text-4xl">🚀</div>
+                  <div>
+                    <div class="text-emerald-400 font-semibold">
+                      40% faster deployments
+                    </div>
+                    <div class="text-zinc-400 text-sm">
+                      Average client result
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button
+            onclick="prevSlide()"
+            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition z-10"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            onclick="nextSlide()"
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition z-10"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <!-- Dots -->
+          <div
+            class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+          >
+            <button
+              onclick="goToSlide(0)"
+              class="carousel-dot w-3 h-3 bg-white rounded-full transition"
+            ></button>
+            <button
+              onclick="goToSlide(1)"
+              class="carousel-dot w-3 h-3 bg-white/50 hover:bg-white rounded-full transition"
+            ></button>
+            <button
+              onclick="goToSlide(2)"
+              class="carousel-dot w-3 h-3 bg-white/50 hover:bg-white rounded-full transition"
+            ></button>
+            <button
+              onclick="goToSlide(3)"
+              class="carousel-dot w-3 h-3 bg-white/50 hover:bg-white rounded-full transition"
+            ></button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Trust Bar -->
     <div class="bg-zinc-900 py-6 border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-75">
-            <img src="assets/aws.svg" alt="AWS" class="h-9 hover:scale-110 transition">
-            <img src="assets/azure.svg" alt="Azure" class="h-9 hover:scale-110 transition">
-            <img src="assets/gcp.svg" alt="GCP" class="h-9 hover:scale-110 transition">
-            <img src="assets/kubernetes.svg" alt="Kubernetes" class="h-9 hover:scale-110 transition">
-            <img src="assets/cncf.svg" alt="CNCF" class="h-9 hover:scale-110 transition">
-            <!-- Additional logos -->
-            <img src="assets/docker.svg" alt="Docker" class="h-9 hover:scale-110 transition">
-            <img src="assets/terraform.svg" alt="Terraform" class="h-9 hover:scale-110 transition">
-        </div>
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-75"
+      >
+        <img
+          src="assets/aws.svg"
+          alt="AWS"
+          class="h-9 hover:scale-110 transition"
+        />
+        <img
+          src="assets/azure.svg"
+          alt="Azure"
+          class="h-9 hover:scale-110 transition"
+        />
+        <img
+          src="assets/gcp.svg"
+          alt="GCP"
+          class="h-9 hover:scale-110 transition"
+        />
+        <img
+          src="assets/kubernetes.svg"
+          alt="Kubernetes"
+          class="h-9 hover:scale-110 transition"
+        />
+        <img
+          src="assets/cncf.svg"
+          alt="CNCF"
+          class="h-9 hover:scale-110 transition"
+        />
+        <!-- Additional logos -->
+        <img
+          src="assets/docker.svg"
+          alt="Docker"
+          class="h-9 hover:scale-110 transition"
+        />
+        <img
+          src="assets/terraform.svg"
+          alt="Terraform"
+          class="h-9 hover:scale-110 transition"
+        />
+      </div>
     </div>
 
     <!-- Services -->
     <section id="services" class="py-24 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="text-emerald-400 font-semibold tracking-widest">SERVICES</div>
-                <h2 class="heading text-5xl font-semibold mt-3">Cloud Native Expertise</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition">☁️</div>
-                    <h3 class="text-2xl font-semibold mb-3">Cloud Migration</h3>
-                    <p class="text-zinc-400">Seamless transition from legacy systems to cloud-native architectures on AWS, Azure, or GCP. Minimize downtime and maximize value.</p>
-                    <ul class="mt-6 space-y-2 text-sm">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Assessment &amp; Strategy</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Lift-and-Shift + Refactor</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Cost Optimization</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition">🐳</div>
-                    <h3 class="text-2xl font-semibold mb-3">Kubernetes &amp; Containers</h3>
-                    <p class="text-zinc-400">Design, implement, and manage production-grade Kubernetes platforms. Reduce operational complexity while increasing velocity.</p>
-                    <ul class="mt-6 space-y-2 text-sm">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Cluster Architecture</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> CI/CD Pipelines</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Observability &amp; Security</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition">🔧</div>
-                    <h3 class="text-2xl font-semibold mb-3">Open Source Optimization</h3>
-                    <p class="text-zinc-400">Strategically reduce dependency sprawl, secure your open source supply chain, and leverage managed cloud services for reliability.</p>
-                    <ul class="mt-6 space-y-2 text-sm">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Dependency Audit</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Supply Chain Security</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Hybrid Cloud Strategy</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Data & AI Services -->
-            <div class="mt-24">
-                <div class="text-center mb-16">
-                    <div class="text-emerald-400 font-semibold tracking-widest">DATA &amp; AI</div>
-                    <h2 class="heading text-5xl font-semibold mt-3">Data &amp; AI Services</h2>
-                    <p class="text-zinc-400 max-w-2xl mx-auto mt-4">Leverage your data as a strategic asset with modern cloud-native analytics and artificial intelligence solutions.</p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Pillar 1 -->
-                    <div class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group">
-                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition">📦</div>
-                        <h3 class="text-2xl font-semibold mb-3">Modern Data Platforms</h3>
-                        <p class="text-zinc-400">Build scalable data lakes, warehouses, and pipelines on cloud infrastructure for reliable data foundation.</p>
-                        <ul class="mt-6 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Data Engineering</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Real-time Streaming</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Data Governance</li>
-                        </ul>
-                    </div>
-
-                    <!-- Pillar 2 -->
-                    <div class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group">
-                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition">📈</div>
-                        <h3 class="text-2xl font-semibold mb-3">Advanced Analytics &amp; BI</h3>
-                        <p class="text-zinc-400">Turn raw data into actionable business insights with powerful visualization and reporting tools.</p>
-                        <ul class="mt-6 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Business Intelligence</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Dashboards &amp; Reporting</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Predictive Analytics</li>
-                        </ul>
-                    </div>
-
-                    <!-- Pillar 3 -->
-                    <div class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group">
-                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition">🤖</div>
-                        <h3 class="text-2xl font-semibold mb-3">AI/ML Solutions</h3>
-                        <p class="text-zinc-400">Implement responsible AI and machine learning models to drive innovation and automation.</p>
-                        <ul class="mt-6 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Model Development</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Generative AI Integration</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> MLOps Pipelines</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <div class="text-emerald-400 font-semibold tracking-widest">
+            SERVICES
+          </div>
+          <h2 class="heading text-5xl font-semibold mt-3">
+            Cloud Native Expertise
+          </h2>
         </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group"
+          >
+            <div
+              class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition"
+            >
+              ☁️
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Cloud Migration</h3>
+            <p class="text-zinc-400">
+              Seamless transition from legacy systems to cloud-native
+              architectures on AWS, Azure, or GCP. Minimize downtime and
+              maximize value.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                Assessment &amp; Strategy
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                Lift-and-Shift + Refactor
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Cost
+                Optimization
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group"
+          >
+            <div
+              class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition"
+            >
+              🐳
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">
+              Kubernetes &amp; Containers
+            </h3>
+            <p class="text-zinc-400">
+              Design, implement, and manage production-grade Kubernetes
+              platforms. Reduce operational complexity while increasing
+              velocity.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Cluster
+                Architecture
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i> CI/CD
+                Pipelines
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                Observability &amp; Security
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group"
+          >
+            <div
+              class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition"
+            >
+              🔧
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">
+              Open Source Optimization
+            </h3>
+            <p class="text-zinc-400">
+              Strategically reduce dependency sprawl, secure your open source
+              supply chain, and leverage managed cloud services for reliability.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                Dependency Audit
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Supply
+                Chain Security
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Hybrid
+                Cloud Strategy
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Data & AI Services -->
+        <div class="mt-24">
+          <div class="text-center mb-16">
+            <div class="text-emerald-400 font-semibold tracking-widest">
+              DATA &amp; AI
+            </div>
+            <h2 class="heading text-5xl font-semibold mt-3">
+              Data &amp; AI Services
+            </h2>
+            <p class="text-zinc-400 max-w-2xl mx-auto mt-4">
+              Leverage your data as a strategic asset with modern cloud-native
+              analytics and artificial intelligence solutions.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Pillar 1 -->
+            <div
+              class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group"
+            >
+              <div
+                class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition"
+              >
+                📦
+              </div>
+              <h3 class="text-2xl font-semibold mb-3">Modern Data Platforms</h3>
+              <p class="text-zinc-400">
+                Build scalable data lakes, warehouses, and pipelines on cloud
+                infrastructure for reliable data foundation.
+              </p>
+              <ul class="mt-6 space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Data
+                  Engineering
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                  Real-time Streaming
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Data
+                  Governance
+                </li>
+              </ul>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div
+              class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group"
+            >
+              <div
+                class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition"
+              >
+                📈
+              </div>
+              <h3 class="text-2xl font-semibold mb-3">
+                Advanced Analytics &amp; BI
+              </h3>
+              <p class="text-zinc-400">
+                Turn raw data into actionable business insights with powerful
+                visualization and reporting tools.
+              </p>
+              <ul class="mt-6 space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                  Business Intelligence
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                  Dashboards &amp; Reporting
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                  Predictive Analytics
+                </li>
+              </ul>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div
+              class="bg-zinc-900 rounded-3xl p-8 hover:-translate-y-2 transition-all border border-transparent hover:border-emerald-500/30 group"
+            >
+              <div
+                class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition"
+              >
+                🤖
+              </div>
+              <h3 class="text-2xl font-semibold mb-3">AI/ML Solutions</h3>
+              <p class="text-zinc-400">
+                Implement responsible AI and machine learning models to drive
+                innovation and automation.
+              </p>
+              <ul class="mt-6 space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i> Model
+                  Development
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                  Generative AI Integration
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-1"></i> MLOps
+                  Pipelines
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About -->
     <section id="about" class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-16 items-center">
-            <div class="md:col-span-5">
-                <img src="https://picsum.photos/id/201/700/520" alt="Team collaborating" class="rounded-3xl">
-            </div>
-            <div class="md:col-span-7 space-y-8">
-                <div>
-                    <div class="uppercase text-emerald-400 text-sm font-semibold mb-2 tracking-wider">OUR STORY</div>
-                    <h2 class="heading text-5xl font-semibold leading-tight">From jars to clouds – pickling your infrastructure for longevity.</h2>
-                </div>
-                <div class="prose prose-invert max-w-none text-zinc-300 text-lg">
-                    <p>PicklesCloud was founded on the belief that every organization deserves infrastructure as preserved and reliable as a perfectly pickled cucumber.</p>
-                    <p>We specialize in guiding enterprises through complex digital transformations, helping them embrace cloud-native principles while smartly managing open source components to reduce risk and operational overhead.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-8 pt-8">
-                    <div>
-                        <div class="text-4xl font-semibold text-emerald-400">50+</div>
-                        <div class="text-zinc-400">Successful migrations</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-semibold text-emerald-400">12</div>
-                        <div class="text-zinc-400">Countries served</div>
-                    </div>
-                </div>
-            </div>
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-16 items-center"
+      >
+        <div class="md:col-span-5">
+          <img
+            src="https://picsum.photos/id/201/700/520"
+            alt="Team collaborating"
+            class="rounded-3xl"
+          />
         </div>
+        <div class="md:col-span-7 space-y-8">
+          <div>
+            <div
+              class="uppercase text-emerald-400 text-sm font-semibold mb-2 tracking-wider"
+            >
+              OUR STORY
+            </div>
+            <h2 class="heading text-5xl font-semibold leading-tight">
+              From jars to clouds – pickling your infrastructure for longevity.
+            </h2>
+          </div>
+          <div class="prose prose-invert max-w-none text-zinc-300 text-lg">
+            <p>
+              PicklesCloud was founded on the belief that every organization
+              deserves infrastructure as preserved and reliable as a perfectly
+              pickled cucumber.
+            </p>
+            <p>
+              We specialize in guiding enterprises through complex digital
+              transformations, helping them embrace cloud-native principles
+              while smartly managing open source components to reduce risk and
+              operational overhead.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-8 pt-8">
+            <div>
+              <div class="text-4xl font-semibold text-emerald-400">50+</div>
+              <div class="text-zinc-400">Successful migrations</div>
+            </div>
+            <div>
+              <div class="text-4xl font-semibold text-emerald-400">12</div>
+              <div class="text-zinc-400">Countries served</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Why Us -->
     <section id="why" class="py-24 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="heading text-5xl font-semibold">Why PicklesCloud?</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="flex gap-6">
-                    <div class="text-5xl flex-shrink-0">🥒</div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-2">Preserved Performance</h3>
-                        <p class="text-zinc-400">Our solutions are built to last — just like great pickles. Battle-tested architectures that scale with your business.</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <div class="text-5xl flex-shrink-0">🔒</div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-2">Security First</h3>
-                        <p class="text-zinc-400">Zero-trust principles and supply chain security to protect your cloud investments.</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <div class="text-5xl flex-shrink-0">⚡</div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-2">Velocity Boost</h3>
-                        <p class="text-zinc-400">Developer experience that accelerates delivery without sacrificing stability.</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <div class="text-5xl flex-shrink-0">🌍</div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-2">Vendor Agnostic</h3>
-                        <p class="text-zinc-400">Multi-cloud expertise. We recommend the best tool for your unique needs.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="heading text-5xl font-semibold">Why PicklesCloud?</h2>
         </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div class="flex gap-6">
+            <div class="text-5xl flex-shrink-0">🥒</div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-2">Preserved Performance</h3>
+              <p class="text-zinc-400">
+                Our solutions are built to last — just like great pickles.
+                Battle-tested architectures that scale with your business.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="text-5xl flex-shrink-0">🔒</div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-2">Security First</h3>
+              <p class="text-zinc-400">
+                Zero-trust principles and supply chain security to protect your
+                cloud investments.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="text-5xl flex-shrink-0">⚡</div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-2">Velocity Boost</h3>
+              <p class="text-zinc-400">
+                Developer experience that accelerates delivery without
+                sacrificing stability.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="text-5xl flex-shrink-0">🌍</div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-2">Vendor Agnostic</h3>
+              <p class="text-zinc-400">
+                Multi-cloud expertise. We recommend the best tool for your
+                unique needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA -->
     <section class="bg-emerald-600 py-20">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="heading text-5xl font-semibold mb-6">Ready to pickle your cloud journey?</h2>
-            <p class="text-xl mb-10 text-emerald-100">Let's discuss how we can help your organization thrive in the cloud.</p>
-            <a href="#contact" class="inline-block bg-white text-emerald-700 hover:bg-emerald-50 px-10 py-5 rounded-3xl text-xl font-semibold">Book a Free Strategy Session</a>
-        </div>
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="heading text-5xl font-semibold mb-6">
+          Ready to pickle your cloud journey?
+        </h2>
+        <p class="text-xl mb-10 text-emerald-100">
+          Let's discuss how we can help your organization thrive in the cloud.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-white text-emerald-700 hover:bg-emerald-50 px-10 py-5 rounded-3xl text-xl font-semibold"
+          >Book a Free Strategy Session</a
+        >
+      </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16">
+          <div>
+            <h2 class="heading text-5xl font-semibold mb-8">Get in touch</h2>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <i
+                  class="fa-solid fa-envelope text-2xl mt-1 text-emerald-400"
+                ></i>
                 <div>
-                    <h2 class="heading text-5xl font-semibold mb-8">Get in touch</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-envelope text-2xl mt-1 text-emerald-400"></i>
-                            <div>
-                                <div class="font-medium">hello@picklescloud.com</div>
-                                <div class="text-sm text-zinc-500">We reply within 24 hours</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-phone text-2xl mt-1 text-emerald-400"></i>
-                            <div>
-                                <div class="font-medium">+1 (555) 123-4567</div>
-                            </div>
-                        </div>
-                    </div>
+                  <div class="font-medium">hello@picklescloud.com</div>
+                  <div class="text-sm text-zinc-500">
+                    We reply within 24 hours
+                  </div>
                 </div>
-                
-                <form class="space-y-6" onsubmit="handleSubmit(event)">
-                    <div class="grid grid-cols-2 gap-6">
-                        <input type="text" placeholder="First Name" class="bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none">
-                        <input type="text" placeholder="Last Name" class="bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none">
-                    </div>
-                    <input type="email" placeholder="Work Email" class="w-full bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none">
-                    <textarea placeholder="Tell us about your project..." rows="5" class="w-full bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none"></textarea>
-                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 py-5 rounded-3xl font-semibold text-lg">Send Message</button>
-                </form>
+              </div>
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-phone text-2xl mt-1 text-emerald-400"></i>
+                <div>
+                  <div class="font-medium">+392512014442</div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <form class="space-y-6" onsubmit="handleSubmit(event)">
+            <div class="grid grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="First Name"
+                class="bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none"
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none"
+              />
+            </div>
+            <input
+              type="email"
+              placeholder="Work Email"
+              class="w-full bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none"
+            />
+            <textarea
+              placeholder="Tell us about your project..."
+              rows="5"
+              class="w-full bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 outline-none"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-emerald-500 hover:bg-emerald-600 py-5 rounded-3xl font-semibold text-lg"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-black py-12 border-t border-zinc-900">
-        <div class="max-w-7xl mx-auto px-6 text-zinc-500 text-sm">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3">
-                    <img src="assets/logo.png" alt="PicklesCloud" class="w-8 h-8 object-contain">
-                    <span class="heading text-xl font-medium text-white">picklescloud</span>
-                </div>
-                <div>© 2026 PicklesCloud. All rights reserved.</div>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white">Privacy</a>
-                    <a href="#" class="hover:text-white">Terms</a>
-                    <a href="https://github.com" target="_blank" class="hover:text-white">GitHub</a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6 text-zinc-500 text-sm">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/logo.png"
+              alt="PicklesCloud"
+              class="w-8 h-8 object-contain"
+            />
+            <span class="heading text-xl font-medium text-white"
+              >picklescloud</span
+            >
+          </div>
+          <div>© 2026 PicklesCloud. All rights reserved.</div>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white">Privacy</a>
+            <a href="#" class="hover:text-white">Terms</a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              class="hover:text-white"
+              >GitHub</a
+            >
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert("Thank you! Our team will get back to you shortly. 🥒");
+      function handleSubmit(e) {
+        e.preventDefault();
+        alert("Thank you! Our team will get back to you shortly. 🥒");
+      }
+
+      // Carousel functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const dots = document.querySelectorAll(".carousel-dot");
+      let autoSlideInterval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.opacity = i === index ? "1" : "0";
+          slide.style.zIndex = i === index ? "1" : "0";
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("bg-white", i === index);
+          dot.classList.toggle("bg-white/50", i !== index);
+        });
+
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function prevSlide() {
+        let prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+      }
+
+      function goToSlide(index) {
+        showSlide(index);
+      }
+
+      // Auto slide
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+          nextSlide();
+        }, 2000); // 2 seconds
+      }
+
+      function stopAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+      }
+
+      // Initialize carousel
+      function initCarousel() {
+        // Show first slide
+        showSlide(0);
+
+        // Start auto slide
+        startAutoSlide();
+
+        // Pause on hover
+        const carouselContainer = document.getElementById("hero-carousel");
+        if (carouselContainer) {
+          carouselContainer.addEventListener("mouseenter", stopAutoSlide);
+          carouselContainer.addEventListener("mouseleave", startAutoSlide);
         }
+      }
 
-        // Carousel functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        let autoSlideInterval;
+      // Mobile Menu
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("mobile-menu-button");
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-                slide.style.zIndex = i === index ? '1' : '0';
-            });
-            
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('bg-white', i === index);
-                dot.classList.toggle('bg-white/50', i !== index);
-            });
-            
-            currentSlide = index;
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+          menu.classList.add("hidden");
+          icon.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
+      }
 
-        function nextSlide() {
-            let next = (currentSlide + 1) % slides.length;
-            showSlide(next);
+      // Close mobile menu when clicking links (already handled in onclick)
+
+      // Initialize when page loads
+      window.onload = function () {
+        initCarousel();
+
+        // Add click handler for hamburger
+        const mobileButton = document.getElementById("mobile-menu-button");
+        if (mobileButton) {
+          mobileButton.addEventListener("click", toggleMobileMenu);
         }
-
-        function prevSlide() {
-            let prev = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(prev);
-        }
-
-        function goToSlide(index) {
-            showSlide(index);
-        }
-
-        // Auto slide
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                nextSlide();
-            }, 2000); // 2 seconds
-        }
-
-        function stopAutoSlide() {
-            if (autoSlideInterval) clearInterval(autoSlideInterval);
-        }
-
-        // Initialize carousel
-        function initCarousel() {
-            // Show first slide
-            showSlide(0);
-            
-            // Start auto slide
-            startAutoSlide();
-            
-            // Pause on hover
-            const carouselContainer = document.getElementById('hero-carousel');
-            if (carouselContainer) {
-                carouselContainer.addEventListener('mouseenter', stopAutoSlide);
-                carouselContainer.addEventListener('mouseleave', startAutoSlide);
-            }
-        }
-
-        // Mobile Menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-menu-button');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            } else {
-                menu.classList.add('hidden');
-                icon.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-        }
-
-        // Close mobile menu when clicking links (already handled in onclick)
-
-        // Initialize when page loads
-        window.onload = function() {
-            initCarousel();
-            
-            // Add click handler for hamburger
-            const mobileButton = document.getElementById('mobile-menu-button');
-            if (mobileButton) {
-                mobileButton.addEventListener('click', toggleMobileMenu);
-            }
-        };
+      };
     </script>
-</body>
+  </body>
 </html>
